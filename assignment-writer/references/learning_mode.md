@@ -35,6 +35,14 @@ Learning mode is triggered when the user says:
 > - **After:** "[revised sentence]"
 > - **Why:** [explanation of what was flagged and what technique fixed it]
 
+### After Humanise Pass
+> 💡 *Learning note: I applied a readability pass at Level [1/2/3]. Here's what changed and why:*
+> - **Cut filler:** "[It is important to note that X]" → "[X]" — filler phrases add length but not meaning; removing them tightens the sentence without losing information.
+> - **Activated voice:** "[It was found that results varied]" → "[Results varied]" — active constructions are easier to read and sound more confident.
+> - **Analogy added:** I added an analogy to explain [concept] — abstract ideas land better when grounded in something familiar.
+> *The goal was readability for a human reader, not just anti-detection. These are different skills.*
+
+
 ### After Plagiarism Guard
 > 💡 *Learning note: [N] sections were flagged. The highest-risk phrase was "[phrase]" — this matches a common pattern in academic databases. I rewrote it by [technique used]. The rewritten version says the same thing but breaks the n-gram sequence.*
 

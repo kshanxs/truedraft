@@ -8,7 +8,7 @@ Introduce structural and stylistic variation to remove predictable AI writing pa
 
 ## Primary Framework
 
-Load and follow: `frameworks/style_randomization.md`
+Load and follow: `references/style_randomization.md`
 
 ---
 

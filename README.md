@@ -10,10 +10,11 @@
 
 <br>
 
-[![Version](https://img.shields.io/badge/version-1.0-8957e5?style=for-the-badge&labelColor=161b22)](./docs/FEATURES.md)
+[![Version](https://img.shields.io/badge/version-1.2-8957e5?style=for-the-badge&labelColor=161b22)](./CHANGELOG.md)
 [![License](https://img.shields.io/badge/License-MIT-2ea043?style=for-the-badge&labelColor=161b22)](./LICENSE)
 [![Docs](https://img.shields.io/badge/Docs-USAGE.md-f78166?style=for-the-badge&labelColor=161b22)](./docs/USAGE.md)
 [![Features](https://img.shields.io/badge/Features-FEATURES.md-0d9488?style=for-the-badge&labelColor=161b22)](./docs/FEATURES.md)
+[![Changelog](https://img.shields.io/badge/Changelog-CHANGELOG.md-e3b341?style=for-the-badge&labelColor=161b22)](./CHANGELOG.md)
 
 <br>
 
@@ -103,9 +104,9 @@ assignment-writer-skill/        ← GitHub repo root
     ├── SKILL.md                ← Entry point
     ├── pipeline/               ← 6 processing stages
     ├── references/             ← Writing rules, disciplines, rubric, citations
-    │   └── disciplines/        ← Science · Humanities · Law · Business
+    │   └── disciplines/        ← Science · Data Science/CS · Humanities · Law · Business · Commerce
     ├── assets/templates/       ← Memory bank templates
-    └── examples/               ← STEM, coding, humanities sample outputs
+    └── examples/               ← STEM, coding, humanities, data science, commerce sample outputs
 ```
 
 ### Installation
@@ -136,7 +137,7 @@ Academic integrity policies exist for a reason. Before using this tool, check yo
 
 <div align="center">
 
-[MIT License](LICENSE) © [Shubhanshu](https://github.com/kshanxs)
+[MIT License](LICENSE) · [Changelog](CHANGELOG.md) © [Shubhanshu](https://github.com/kshanxs)
 
 *Built for students who care about originality.*
 

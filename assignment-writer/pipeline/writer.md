@@ -33,10 +33,12 @@ Check `assignment-memory/topic.md` for the course/subject, then load the appropr
 
 | Discipline | Load |
 |---|---|
-| Science, Engineering, Medicine, CS | `references/disciplines/science.md` |
+| Data Science, CS, ML, AI, Software Engineering, Statistics | `references/disciplines/data_science_cs.md` |
+| Science, Engineering, Medicine (general) | `references/disciplines/science.md` |
 | Literature, History, Philosophy, Arts | `references/disciplines/humanities.md` |
 | Law, Legal Studies | `references/disciplines/law.md` |
-| Business, Management, Economics | `references/disciplines/business.md` |
+| Commerce, Business Studies, intro Economics, Accounting | `references/disciplines/commerce.md` |
+| Business, Management, Economics (MBA/corporate) | `references/disciplines/business.md` |
 | Mixed / unclear | Use `references/academic_skill.md` defaults |
 
 Apply the loaded discipline's structure, voice, and writing rules throughout the draft.

@@ -62,7 +62,7 @@ If provided, note it in `assignment-memory/topic.md`. Adjust if the institution 
 
 ---
 
-### Q5 — Rubric or Marking Criteria
+### Q6 — Rubric or Marking Criteria
 > "Do you have a rubric or marking criteria? If yes, paste it here — I'll calibrate the writing to maximise your marks."
 
 **If rubric is provided:**
@@ -80,14 +80,14 @@ If provided, note it in `assignment-memory/topic.md`. Adjust if the institution 
 
 ---
 
-### Q6 — Specific Instructions
+### Q7 — Specific Instructions
 > "Any specific instructions from your professor? (You can paste them directly)"
 
 *(Free text — paste guidelines, rubric excerpts, formatting rules.)*
 
 ---
 
-### Q7 — Deadline Urgency
+### Q8 — Deadline Urgency
 > "How much time do you have? This helps me calibrate depth."
 
 Options:
@@ -97,7 +97,7 @@ Options:
 
 ---
 
-### Q8 — Do you have a draft or outline already?
+### Q9 — Do you have a draft or outline already?
 > "Do you have any notes, bullet points, or a rough outline you'd like me to build from? If yes, paste them here."
 
 **If yes:** Store in `assignment-memory/topic.md` under a "Student Notes" section. The Writer Agent will use these as the skeleton instead of generating structure from scratch. Tell the user:
@@ -107,7 +107,7 @@ Options:
 
 ---
 
-### Q9 — Learning Mode
+### Q10 — Learning Mode
 > "Do you want me to explain my decisions as I write — what techniques I'm using and why? (Takes longer but helps you understand and improve your own writing.)"
 
 **If yes:** Load `references/learning_mode.md` and keep it active for the entire session. Add *(Learning mode ON)* to the memory bank.
@@ -124,10 +124,12 @@ Once questions are done (or skipped):
    > "Got it — writing a [word count] [level] assignment on [topic] for [course], [citation style] citations. [If rubric: Calibrating to your marking criteria — [top dimension] carries the most weight.] [If institution: Formatting to [institution] conventions.] [If draft/notes: Building from your outline.] [If learning mode: Explaining decisions as I go.] Let me start now."
 
 2. **Detect discipline** from the course/subject field:
-   - Science / Engineering / Medicine → `references/disciplines/science.md`
-   - Literature / History / Philosophy → `references/disciplines/humanities.md`
+   - Data Science / Computer Science / ML / AI / Software Engineering / Statistics → `references/disciplines/data_science_cs.md`
+   - Science / Engineering / Medicine (general) → `references/disciplines/science.md`
+   - Literature / History / Philosophy / Arts → `references/disciplines/humanities.md`
    - Law / Legal Studies → `references/disciplines/law.md`
-   - Business / Management / Economics → `references/disciplines/business.md`
+   - Commerce / Business Studies / introductory Economics / Accounting → `references/disciplines/commerce.md`
+   - Business / Management / Economics (MBA/corporate level) → `references/disciplines/business.md`
    - Unclear → use `references/academic_skill.md` defaults
 
 3. **Initialise memory bank** — if a project directory exists or the user wants to save context:
