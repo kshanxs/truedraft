@@ -5,6 +5,19 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.2.2] — 2026-03-14
+
+### Added
+- **Source Divergence Awareness** — proactively prevents canonical example overlap before writing begins:
+  - `pipeline/research.md` — new Task 6: Source Divergence Audit. Identifies the 2–3 most authoritative sources on the topic, blacklists their examples and framings, and requires alternative illustrations before passing notes to the Writer Agent
+  - `pipeline/research.md` — new **Source Divergence Blacklist** section in the output format, passed downstream to the Plagiarism Guard
+  - `pipeline/plagiarism_guard.md` — new **Stage 0: Canonical Example Scan** runs before any other scoring. Checks the research blacklist and a built-in table of 14 common topic/example pairs (bias-variance tradeoff, gradient descent, recursion, etc.) — any match is immediately flagged 🔴 HIGH and replaced with a domain-shifted alternative
+
+### Why
+Canonical example convergence is a class of similarity detection that bypasses n-gram checks entirely — two independently written texts can share zero copied sentences but still match on Turnitin/Grammarly because they use the same well-known pedagogical illustration (e.g. KNN k=1 for bias-variance tradeoff, spam filter for ML intro). This update eliminates that class of risk at the source.
+
+---
+
 ## [1.2.1] — 2026-03-14
 
 ### Added

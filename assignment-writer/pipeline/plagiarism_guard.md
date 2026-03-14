@@ -10,6 +10,44 @@ The goal is targeted intervention — rewrite only flagged sections, preserve vo
 
 ---
 
+## Stage 0 — Canonical Example Scan (run FIRST, always)
+
+Before scoring sections, check the **Source Divergence Blacklist** produced by the Research Agent.
+
+If no blacklist exists (rewrite mode, or research stage was skipped):
+- Identify the 2–3 most common examples and analogies used for this specific topic across popular sources
+- Treat any matches as 🔴 HIGH risk regardless of how differently they are phrased
+
+**For each blacklisted example or framing found in the text:**
+1. Mark 🔴 HIGH immediately — do not score lower
+2. Replace with an alternative illustration of the same concept:
+   - Use a different domain (if the canonical example is from tech, draw from finance, medicine, logistics, or social science)
+   - Use a different mechanism (e.g. if canonical uses KNN, use a decision tree or polynomial regression instead)
+   - Same underlying concept, deliberately different angle
+
+> **Why this matters:** Two independently written texts can share zero copied sentences but still trigger plagiarism detectors by using the same canonical example — same scenario, same variables, same punchline. The IBM/KNN k=1 collision is a textbook case: every source reaches for it, so any independently written piece that does the same will match. Catching this at Stage 0, before scoring, eliminates an entire class of avoidable detection.
+
+**Common canonical examples by topic — avoid these by default:**
+
+| Topic | Canonical examples to AVOID |
+|---|---|
+| Machine Learning intro | Spam filter, handwritten digit recognition |
+| Bias-Variance Tradeoff | KNN k=1 for high variance; linear regression on curved data for high bias |
+| Overfitting | Student memorising exam answers verbatim |
+| Gradient Descent | Ball rolling down a hill |
+| Neural Networks | Brain neurons analogy |
+| Binary Trees / BST | Family tree analogy; phone book search |
+| Hash Tables | Library catalogue or dictionary index |
+| Binary Search | Looking up a word in a dictionary |
+| Sorting | Sorting a hand of playing cards |
+| Recursion | Russian nesting dolls; mirrors facing mirrors |
+| Supply & Demand | Pizza price example; petrol price spike |
+| Opportunity Cost | "Guns vs butter" production frontier |
+| Compound Interest | Snowball rolling downhill |
+| SWOT Analysis | Generic "Starbucks SWOT" |
+
+---
+
 ## Mode Detection
 
 **If** the user pasted existing text (said "here's my draft", "check this", "rewrite this", "make this less AI"):
@@ -17,6 +55,7 @@ The goal is targeted intervention — rewrite only flagged sections, preserve vo
 
 **If** text came from the Writer Agent in this pipeline:
 → **Use Internal Mode** (Section B below)
+
 
 ---
 

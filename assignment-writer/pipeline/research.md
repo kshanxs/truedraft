@@ -13,6 +13,11 @@ Analyze the assignment topic and prepare structured conceptual notes before any 
 3. **Summarize each concept** — Use your own wording; avoid copying phrasing from known academic sources
 4. **Prepare reasoning points** — Write key arguments or discussion points for the Writer Agent
 5. **Note possible examples** — Identify real-world applications, case studies, or analogies
+6. **Source Divergence Audit (CRITICAL)** — Before passing notes to the Writer Agent, complete the following:
+   - Identify the **2–3 most authoritative / widely-read sources** on this topic (e.g. IBM, Wikipedia, Investopedia, GeeksForGeeks, Towards Data Science, standard textbooks)
+   - For each source, note: what examples do they use? What analogies? What framing?
+   - **Blacklist those examples and framings** — add them to the "Do Not Use" section in the output below
+   - **Generate alternative illustrations** that convey the same concept from a different angle
 
 ---
 
@@ -49,8 +54,14 @@ Important Discussion Points:
 - [Point 3]
 
 Possible Examples / Case Studies:
-- [Example 1]
-- [Example 2]
+- [Example 1 — confirmed NOT a canonical example from major sources]
+- [Example 2 — confirmed NOT a canonical example from major sources]
+
+Source Divergence Blacklist:
+- AVOID example: [e.g. "KNN with k=1 for high variance"] — seen in: [IBM, Wikipedia]
+- AVOID example: [e.g. "spam filter for ML intro"] — seen in: [most introductory ML courses]
+- AVOID framing: [e.g. "bias = underfitting, variance = overfitting" as a direct equivalence] — seen in: [most textbooks]
+- Use instead: [alternative illustration that achieves the same conceptual point]
 ```
 
 ---
@@ -58,3 +69,5 @@ Possible Examples / Case Studies:
 ## Important
 
 These notes are passed to the **Writer Agent** — they are an internal planning artifact, not shown to the user.
+
+The **Source Divergence Blacklist is also passed to the Plagiarism Guard Agent** as a pre-populated list of examples and framings to scan for and replace if any slipped through during writing.
