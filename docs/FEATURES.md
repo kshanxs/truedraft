@@ -1,103 +1,68 @@
-# assignment-writer — Full Features
+# TrueDraft Features
 
-## Writing Features
+## Core Positioning
 
-| Feature | Description |
+TrueDraft is an originality-first drafting workflow. It helps generate fresher writing and revise existing drafts, but it does not claim detector-backed plagiarism scores.
+
+## Workflow Stages
+
+| Stage | Purpose |
 |---|---|
-| **Assignment Forge** | Onboarding conversation: topic, course, level, word count, citations, deadline, rubric — all skippable |
-| **6-Stage Pipeline** | Research → Write → Style → Code → Guard → Review — each stage lazily loaded |
-| **Analytical Intro Engine** | Never generates definition openers. Uses: analytical context / problem framing / historical perspective |
-| **Semantic Expansion** | Every concept: explain → example → implication. Increases semantic distance from source material |
-| **Style Randomization** | Rotates 5 sentence types (analytical / causal / comparative / hypothetical / observational) per paragraph |
-| **N-gram Disruption** | Actively breaks 4+ word sequences matching common academic phrasing |
-| **Concept-first Explanation** | Explains concepts before naming them — inverse of textbook order, harder to fingerprint |
-| **Section-only Mode** | Write just intro / conclusion / body paragraph / methodology — chain multiple requests |
-| **Rewrite Mode** | Paste any text (AI or human) → guard scores each section LOW/MEDIUM/HIGH → rewrites only flagged parts |
-| **Multi-discipline** | STEM, humanities, social science, law, business — style calibrated per field |
+| `plan` | Build the thesis, section goals, examples to avoid, and source placeholders |
+| `outline` | Create the section structure and wait for approval in topic-only mode |
+| `draft` | Write the first full draft from the approved plan |
+| `rewrite` | Reduce formulaic phrasing, stock examples, and repeated structure |
+| `audit` | Report support gaps, placeholder citations, trust note, and delivery status |
 
----
+## Input Modes
 
-## Anti-Plagiarism Engine
-
-| Technique | What it counters |
+| Mode | Description |
 |---|---|
-| Analytical introductions | N-gram matches in definitions (biggest similarity spike) |
-| Semantic expansion | Cosine similarity — expands conceptual distance from source |
-| Style randomization | Stylometric fingerprinting / repetitive AI patterns |
-| N-gram disruption | Winnowing / k-gram hashing detectors |
-| Structural originality | JPlag / MOSS token comparison |
-| Dual-mode guard | Works on both generated and pasted external text |
+| `open_generation` | Draft from a topic alone, with plan and outline approval gates |
+| `notes_first` | Expand user notes into a full draft while keeping their framing |
+| `draft_rewrite` | Improve an existing draft with targeted rewrites and a change summary |
 
----
+## Originality Controls
 
-## Coding Features
-
-| Feature | Description |
+| Control | Description |
 |---|---|
-| **Algorithm Diversity Rule** | Never defaults to the most common textbook solution |
-| **Modular Design** | Helper functions break token-sequence similarity |
-| **Descriptive Naming** | No `x`, `arr`, `temp` — uses `search_index`, `node_depth`, etc. |
-| **Approach Explanation** | Algorithm choice + reasoning always written before code |
-| **Complexity Analysis** | Time + space complexity with explanation |
-| **Possible Improvements** | Trade-offs and alternative approaches noted |
-| **Comment Reasoning Rule** | Comments explain *why*, never just restate the code |
+| Analytical opening rule | Avoids dictionary-style intros and generic filler |
+| Stock-example avoidance | Replaces overused analogies with fresher examples |
+| Explain → example → implication | Keeps paragraphs reasoned instead of flat |
+| Change summary | Shows what the rewrite stage changed and why |
+| Trust note | Makes mode-specific confidence explicit instead of bluffing certainty |
 
----
+## Citation Controls
 
-## Citation Support
-
-| Style | In-text | Reference list |
-|---|---|---|
-| APA 7th | Author-date | Alphabetical, hanging indent, DOI |
-| MLA 9th | Author-page | Works Cited, title case |
-| Harvard | Author-date | Single quotes for articles, italics for books |
-| IEEE | Numbered `[1]` | Ordered by appearance, abbreviated journal names |
-
-→ Full formatting rules: `references/citation_guide.md`
-
----
-
-## Rubric Awareness
-
-| Feature | Description |
+| Rule | Description |
 |---|---|
-| **Rubric Parsing** | Extracts weighted dimensions from pasted marking criteria |
-| **Mark-band Targeting** | Identifies highest-weight category and writes to earn top-band marks in it |
-| **Required Section Detection** | Flags structural requirements (IMRAD, Literature Review, Case Study) |
-| **Critical Analysis Injection** | Adds evaluation moves per paragraph to satisfy analysis criteria |
+| Placeholder-only when unsourced | Missing sources remain marked |
+| No invented references | Bibliographies are only built from user-supplied sources |
+| Delivery warning | Output is not labeled submission-ready if placeholders remain |
 
-→ Full rubric strategy: `references/rubric_guide.md`
-
----
-
-## Memory Bank
+## Project Memory
 
 | File | Purpose |
 |---|---|
-| `assignment-memory/topic.md` | Assignment requirements, rubric, key concepts |
-| `assignment-memory/style_profile.md` | Tone, citation style, sentence preferences |
-| `assignment-memory/risk_log.md` | Plagiarism guard audit trail — every flagged phrase and rewrite |
+| `project-memory/brief.md` | Topic, rubric, scope, and notes |
+| `project-memory/style_profile.md` | Tone, citation style, and writing constraints |
+| `project-memory/audit_log.md` | Rewrite actions and unresolved issues |
 
----
+## Discipline Support
 
-## Output Modes
+TrueDraft keeps discipline-specific guidance for:
 
-| Mode | Trigger |
-|---|---|
-| Full pipeline | `"Write my assignment on [topic]"` |
-| Coding only | `"Do my [language] homework"` |
-| Rewrite / de-risk | `"Check/fix/reduce plagiarism in: [paste]"` |
-| Section only | `"Write just the [intro/conclusion/body] for..."` |
-| Style pass | `"Make this sound less like AI"` |
-| Citation pass | `"Add APA citations"` |
-| Rubric-driven | `"Here's my rubric: [paste]"` |
+- science
+- humanities
+- law
+- business
+- commerce
+- data science / CS
 
----
-
-## What the Examples Cover
+## Examples
 
 | File | Demonstrates |
 |---|---|
-| `examples/essay_example.md` | STEM essay (Machine Learning) — semantic expansion, analytical intro |
-| `examples/coding_example.md` | Algorithm (Two Sum) — hash approach, descriptive naming, complexity |
-| `examples/humanities_example.md` | Social science (Political Polarisation) — contested framing, evaluative language, counterargument engagement |
+| `examples/open_generation_example.md` | Topic-only generation with placeholders and trust note |
+| `examples/notes_first_example.md` | Notes-led drafting with stronger user grounding |
+| `examples/draft_rewrite_example.md` | Targeted rewrite with a sentence-level change summary |

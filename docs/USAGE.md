@@ -1,106 +1,65 @@
-# assignment-writer — Usage Guide
+# TrueDraft Usage
 
-A practical guide with real example dialogues for every stage of using this skill.
+This skill has three main modes. The safest output comes from the mode with the strongest user input.
 
----
-
-## Starting a New Assignment
+## 1. Topic-Only Drafting
 
 **You say:**
-> "Write my assignment on neural networks for my Machine Learning course"
+> "Write a 1200-word draft on climate adaptation"
 
 **What happens:**
-The skill runs the Assignment Forge — a short onboarding conversation to understand your course level, word count, citation style, and deadline. Every question is skippable.
 
-> "What subject or course is this for? And is it high school, undergraduate, or postgraduate level?"
+1. TrueDraft builds a claim plan
+2. It proposes an outline
+3. It waits for approval
+4. Only then does it draft, rewrite, and audit
 
-You answer, it moves on. After 2–3 questions (or if you skip them all), it starts writing immediately.
+If the user skips approval, TrueDraft should offer a shorter exploratory draft rather than a polished final submission.
 
----
-
-## Direct — No Forge Needed
-
-If you give enough context upfront, the forge is skipped entirely:
+## 2. Notes-First Drafting
 
 **You say:**
-> "Write a 1000-word undergraduate essay on the challenges of Big Data, APA citations, due tomorrow"
+> "Use these notes to draft my literature review: [paste notes]"
 
 **What happens:**
-Enough context detected. Pipeline starts immediately — no questions asked.
 
----
+The notes become the anchor. TrueDraft expands them, fills structural gaps, and marks unsupported claims rather than pretending they are sourced.
 
-## Coding Assignments
+## 3. Draft Rewrite
 
 **You say:**
-> "I have a Python homework problem: find the longest common subsequence of two strings"
+> "Refine this draft so it sounds less formulaic: [paste draft]"
 
 **What happens:**
-The coding pipeline activates. You get:
-- Approach explanation (algorithm choice + reasoning)
-- Structurally original implementation (non-textbook structure)
-- Time + space complexity
-- Possible improvements
 
----
+TrueDraft reads the full draft, flags the sections that need intervention, rewrites those sections, and returns a change summary with any unresolved support gaps.
 
-## Reducing Plagiarism in Existing Text
+## Citation Requests
 
 **You say:**
-> "Make this less likely to be flagged. Here's my draft: [paste text]"
+> "Add APA citations"
 
 **What happens:**
-The plagiarism guard scans every section and rates it LOW / MEDIUM / HIGH risk. Only HIGH and MEDIUM sections are rewritten. LOW stays as-is to preserve your voice.
 
----
-
-## Section-Only Writing
-
-**You say:**
-> "Just write the introduction for my report on climate change adaptation"
-
-**What happens:**
-Introduction only is written following the analytical intro rules (no definitions, context-first). Offered: "Want me to write the rest of the report?"
-
----
-
-## Making It Sound Less Like AI
-
-**You say:**
-> "This sounds too AI-generated, fix it"
-
-**What happens:**
-Style pass runs first — sentence types are varied across all paragraphs. Then plagiarism guard rewrites high-risk phrases. The result reads more natural and analytically distinct.
-
----
-
-## Citation Pass
-
-**You say:**
-> "Add Harvard citations to this essay"
-
-**What happens:**
-References are identified from factual claims in the text. Citations are added in Harvard format inline and in a reference list at the end.
-
----
+- if you provided sources, TrueDraft formats them
+- if you did not provide sources, TrueDraft inserts placeholders
+- it does not invent a reference list
 
 ## Common Commands
 
 | What you say | What you get |
 |---|---|
-| `"Write my assignment on [topic]"` | Full 6-stage pipeline output |
-| `"Do my [language] homework: [problem]"` | Coding solution with approach + complexity |
-| `"Reduce plagiarism in: [text]"` | Guard + style pass on your text |
-| `"Write just the intro for [topic]"` | Introduction only |
-| `"Make this sound less like AI"` | Style variation + phrase rewrite |
-| `"Add APA citations"` | Citation pass |
-| `"Start a new assignment"` | Assignment Forge runs |
-
----
+| `"Write a draft on [topic]"` | `open_generation` with plan and outline gate |
+| `"Use these notes to write [topic]"` | `notes_first` |
+| `"Refine this draft"` | `draft_rewrite` |
+| `"Show me the claim plan first"` | Plan stage only |
+| `"Build the outline and wait"` | Outline stage only |
+| `"Audit this draft before delivery"` | Final audit only |
+| `"Add placeholders for unsupported claims"` | Citation-policy pass without invented sources |
 
 ## Tips
 
-- **Paste your rubric** — if you paste your professor's marking criteria, the skill writes directly to those requirements.
-- **Paste your partial draft** — even if you've started, the skill can continue from where you left off or refine what you have.
-- **Specify your university** — some institutions have formatting rules; mentioning "Oxford style" or "MIT formatting" helps calibrate the output.
-- **Use "section-only" mode** for tight deadlines — it's faster and you can chain requests ("now write the methodology").
+- Paste your rubric if you have one.
+- Give notes or a rough outline whenever possible; that produces stronger drafts.
+- Treat topic-only generation as the lowest-trust mode.
+- Resolve every placeholder before submission.
