@@ -139,6 +139,6 @@ Academic integrity policies exist for a reason. Before using this tool, check yo
 
 [MIT License](LICENSE) · [Changelog](CHANGELOG.md) © [Shubhanshu](https://github.com/kshanxs)
 
-*Built for students who care about originality.*
+*An open-source academic writing skill for AI assistants.*
 
 </div>
