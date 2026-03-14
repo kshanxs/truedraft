@@ -8,7 +8,7 @@ Perform the final quality and originality audit. Every checklist item must be **
 
 ## Framework
 
-Load and apply: `references/self_review.md`
+Load and apply: `references/self_review.md` and `references/grammar.md`
 
 ---
 
@@ -56,6 +56,17 @@ Report the completed checklist to the user at the end of your review.
 - [ ] **No robotic filler** — "It is worth noting that", "This is of paramount importance", "In order to"
 - [ ] **Reads as written by a thinking person** — analytical rather than encyclopaedic
 
+### Grammar & Punctuation *(load `references/grammar.md`)*
+- [ ] **Subject-verb agreement** — verb agrees with subject, not a nearby noun
+- [ ] **Comma after every introductory clause** — scan every sentence that begins with "In...", "When...", "By...", "Despite...", etc.
+- [ ] **Oxford comma consistent** — all lists use a comma before the final "and"/"or"
+- [ ] **Compound modifiers hyphenated** before nouns — `well-suited`, `left-to-right`, `real-world`
+- [ ] **Em/en dash used correctly** — em dash for parenthetical emphasis, en dash for ranges, hyphen for compound words
+- [ ] **Apostrophes correct** — possessives have apostrophe; `its` (possessive) vs `it's` (it is)
+- [ ] **No comma splices or rogue fragments** — independent clauses joined correctly
+- [ ] **Lists are parallel** — all items share the same grammatical form
+- [ ] **Consistent tense** — present for facts/descriptions, past for experimental results
+
 ---
 
 ## After the Checklist
@@ -68,6 +79,7 @@ Report the results like this:
 ⚠️  Depth: fixed 1 item — added critical evaluation to paragraph 3
 ✅ Code: all 4 checks passed
 ✅ Tone: all 3 checks passed
+⚠️  Grammar: fixed 2 items — hyphenated "real-world", fixed comma splice in paragraph 2
 
 Ready for delivery.
 ```

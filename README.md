@@ -10,7 +10,7 @@
 
 <br>
 
-[![Version](https://img.shields.io/badge/version-1.2-8957e5?style=for-the-badge&labelColor=161b22)](./CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.2.1-8957e5?style=for-the-badge&labelColor=161b22)](./CHANGELOG.md)
 [![License](https://img.shields.io/badge/License-MIT-2ea043?style=for-the-badge&labelColor=161b22)](./LICENSE)
 [![Docs](https://img.shields.io/badge/Docs-USAGE.md-f78166?style=for-the-badge&labelColor=161b22)](./docs/USAGE.md)
 [![Features](https://img.shields.io/badge/Features-FEATURES.md-0d9488?style=for-the-badge&labelColor=161b22)](./docs/FEATURES.md)

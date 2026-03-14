@@ -5,6 +5,21 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.2.1] — 2026-03-14
+
+### Added
+- **Grammar & Punctuation pass** — new `references/grammar.md` with 8 rule categories and active quick-check protocol:
+  - Subject-verb agreement
+  - Comma rules (introductory clauses, Oxford comma, compound sentences, which/that)
+  - Hyphenation of compound modifiers; em/en dash vs hyphen usage
+  - Apostrophes (`its` vs `it's`, possessive plurals)
+  - Parallelism in lists
+  - Comma splice and rogue fragment detection
+  - Academic-specific rules (tense consistency, "however" placement, number formatting)
+- **Grammar checklist section** added to `pipeline/review.md` — 9 active checks, inline fixes, reported in the pass/fail summary
+
+---
+
 ## [1.2] — 2026-03-14
 
 ### Added

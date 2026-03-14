@@ -20,6 +20,7 @@ Use **lazy loading** — only read a reference file when its specific feature is
 | `references/academic_skill.md` | Starting the writing phase or reviewing final output |
 | `references/style_randomization.md` | Running the style pass |
 | `references/self_review.md` | Running the plagiarism guard or final review |
+| `references/grammar.md` | Running the final review pass (always load alongside self_review.md) |
 | `references/assignment_forge.md` | At initialization / first use / session resumption |
 | `references/rubric_guide.md` | User provides a rubric or marking criteria |
 | `references/citation_guide.md` | Adding citations or user specifies a citation style |
@@ -207,6 +208,7 @@ When the user pastes a finished or near-finished essay and asks to improve it ("
 | `references/style_randomization.md` | Five sentence types, rotation rules, burstiness simulation |
 | `references/humanise.md` | Readability rules: filler removal, active voice, analogies, rhythm variation, tone modes, intensity levels |
 | `references/self_review.md` | 8-stage similarity audit checklist |
+| `references/grammar.md` | Grammar and punctuation rules: subject-verb agreement, commas, hyphenation, dashes, apostrophes, parallelism |
 | `references/rubric_guide.md` | Rubric parsing, mark-band targeting, required section detection |
 | `references/citation_guide.md` | APA 7, MLA 9, Harvard, IEEE in-text and reference list formats |
 | `references/learning_mode.md` | Explains every writing decision inline — technique, why, before/after |
