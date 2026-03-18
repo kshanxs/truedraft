@@ -4,10 +4,11 @@
 
 `TrueDraft` is a prompt-only skill for producing fresher drafts, refining existing writing, and keeping unsupported claims visible instead of bluffing through them.
 
-It does three things well:
+It does four things well:
 
 - builds a claim plan before drafting
 - requires outline approval for topic-only generation
+- supports coding and implementation-heavy CS/data-science assignments
 - rewrites formulaic phrasing without inventing citations
 
 It does not measure similarity against an external corpus, and it does not guarantee `0 plagiarism`.
@@ -19,6 +20,7 @@ TrueDraft is for:
 - topic-only drafting with tighter structure control
 - notes-first drafting that stays anchored to the user's ideas
 - draft rewrite when the user wants less overlap and less templated phrasing
+- coding-first and mixed-mode assignment workflows (report + implementation)
 
 TrueDraft is not:
 
@@ -33,8 +35,9 @@ The core workflow is:
 1. `Plan` — thesis, claims, examples to avoid, citation placeholders
 2. `Outline` — structure and word budget, then approval gate
 3. `Draft` — full prose from the approved plan
-4. `Rewrite` — reduce formulaic phrasing and stock examples
-5. `Audit` — trust note, unsupported claims, and delivery status
+4. `Coding` (conditional) — implementation-first output for CS/data-science tasks
+5. `Rewrite` — reduce formulaic phrasing and stock examples
+6. `Audit` — trust note, unsupported claims, and delivery status
 
 ## Modes
 
@@ -43,6 +46,8 @@ The core workflow is:
 | `open_generation` | User provides only a topic | Lowest |
 | `notes_first` | User provides notes or an outline | Highest |
 | `draft_rewrite` | User pastes an existing draft | Medium |
+
+Automatic detection routes prompts into prose-first, coding-first, or mixed mode.
 
 ## Citation Policy
 
@@ -56,6 +61,8 @@ The core workflow is:
 "Write a 1200-word draft on climate adaptation"
 "Use these notes to write my literature review"
 "Refine this draft so it sounds less formulaic"
+"Solve this coding assignment in Python and explain complexity"
+"Write implementation and evaluation for my ML project"
 "Show me the claim plan first"
 "Add placeholders for unsupported claims"
 ```

@@ -1,6 +1,6 @@
 # TrueDraft Usage
 
-This skill has three main modes. The safest output comes from the mode with the strongest user input.
+This skill has three main writing modes plus automatic coding detection. The safest output still comes from stronger user input.
 
 ## 1. Topic-Only Drafting
 
@@ -34,6 +34,24 @@ The notes become the anchor. TrueDraft expands them, fills structural gaps, and 
 
 TrueDraft reads the full draft, flags the sections that need intervention, rewrites those sections, and returns a change summary with any unresolved support gaps.
 
+## 4. Coding and Data-Science Assignments
+
+**You say:**
+> "Solve this Java assignment and explain time complexity"
+
+or
+
+> "Write the implementation and evaluation section for my ML project"
+
+**What happens:**
+
+1. TrueDraft auto-detects coding-first or mixed-mode intent
+2. It activates CS/data-science discipline guidance
+3. It generates a structured solution with approach, implementation details, and complexity/metrics notes
+4. It keeps placeholders when dataset, benchmark, or citation support is missing
+
+For mixed report + code submissions, TrueDraft keeps prose stages and inserts a coding stage for implementation-heavy parts.
+
 ## Citation Requests
 
 **You say:**
@@ -52,6 +70,8 @@ TrueDraft reads the full draft, flags the sections that need intervention, rewri
 | `"Write a draft on [topic]"` | `open_generation` with plan and outline gate |
 | `"Use these notes to write [topic]"` | `notes_first` |
 | `"Refine this draft"` | `draft_rewrite` |
+| `"Solve this coding assignment: [problem]"` | coding-first workflow with structured solution sections |
+| `"Write implementation for this ML project"` | mixed-mode workflow with coding stage + report-safe prose |
 | `"Show me the claim plan first"` | Plan stage only |
 | `"Build the outline and wait"` | Outline stage only |
 | `"Audit this draft before delivery"` | Final audit only |
@@ -61,5 +81,7 @@ TrueDraft reads the full draft, flags the sections that need intervention, rewri
 
 - Paste your rubric if you have one.
 - Give notes or a rough outline whenever possible; that produces stronger drafts.
+- For coding tasks, provide constraints, language/version, and sample input/output when possible.
+- For data-science projects, include dataset source, split strategy, and evaluation metric requirements.
 - Treat topic-only generation as the lowest-trust mode.
 - Resolve every placeholder before submission.

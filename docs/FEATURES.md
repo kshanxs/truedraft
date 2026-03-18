@@ -11,6 +11,7 @@ TrueDraft is an originality-first drafting workflow. It helps generate fresher w
 | `plan` | Build the thesis, section goals, examples to avoid, and source placeholders |
 | `outline` | Create the section structure and wait for approval in topic-only mode |
 | `draft` | Write the first full draft from the approved plan |
+| `coding` | Produce coding solutions or implementation-heavy CS/data-science sections |
 | `rewrite` | Reduce formulaic phrasing, stock examples, and repeated structure |
 | `audit` | Report support gaps, placeholder citations, trust note, and delivery status |
 
@@ -22,6 +23,8 @@ TrueDraft is an originality-first drafting workflow. It helps generate fresher w
 | `notes_first` | Expand user notes into a full draft while keeping their framing |
 | `draft_rewrite` | Improve an existing draft with targeted rewrites and a change summary |
 
+Automatic mode detection routes requests into prose-first, coding-first, or mixed mode depending on prompt signals.
+
 ## Originality Controls
 
 | Control | Description |
@@ -31,6 +34,16 @@ TrueDraft is an originality-first drafting workflow. It helps generate fresher w
 | Explain → example → implication | Keeps paragraphs reasoned instead of flat |
 | Change summary | Shows what the rewrite stage changed and why |
 | Trust note | Makes mode-specific confidence explicit instead of bluffing certainty |
+
+## Coding and Data-Science Controls
+
+| Control | Description |
+|---|---|
+| Structured coding output | Uses problem restatement, approach, implementation, complexity, testing, and improvements |
+| Algorithm choice reasoning | Requires explanation of why the selected method fits constraints |
+| Descriptive naming and modularity | Reduces template-like code structure and improves readability |
+| Metrics and limitations discipline | Requires explicit metrics, implementation assumptions, and model/pipeline limits |
+| Integrity-safe claims | Never invents benchmark numbers, dataset facts, or references |
 
 ## Citation Controls
 
@@ -66,3 +79,5 @@ TrueDraft keeps discipline-specific guidance for:
 | `examples/open_generation_example.md` | Topic-only generation with placeholders and trust note |
 | `examples/notes_first_example.md` | Notes-led drafting with stronger user grounding |
 | `examples/draft_rewrite_example.md` | Targeted rewrite with a sentence-level change summary |
+| `examples/coding_assignment_example.md` | Coding-first assignment with complexity and testing notes |
+| `examples/ml_project_report_example.md` | Mixed-mode ML project report with implementation, metrics, and unresolved-citation audit |
