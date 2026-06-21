@@ -22,6 +22,7 @@ Perform the final readiness check. Confirm what is solid, what was rewritten, an
 5. Confirm stock examples from the avoid-list were removed
 6. Confirm the conclusion offers a perspective
 7. Add a final trust note based on mode
+8. List all web-searched citations from `project-memory/audit_log.md` that need verification
 
 ## Trust Note
 
@@ -42,9 +43,11 @@ Audit Summary:
 - Originality risks still present: ...
 - Unsupported claims: ...
 - Citation placeholders remaining: ...
+- Web-searched Citations (Please Verify URLs):
+  - [ ] Citation 1: <source details> (<URL>)
 - Trust note: ...
 
 Delivery Status:
 - Ready for user review
-- Not submission-ready until placeholders or support gaps are resolved
+- Not submission-ready until placeholders, support gaps, or citation verifications are completed
 ```

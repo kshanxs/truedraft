@@ -2,18 +2,19 @@
 
 ## Core Positioning
 
-TrueDraft is an originality-first drafting workflow. It helps generate fresher writing and revise existing drafts, but it does not claim detector-backed plagiarism scores.
+TrueDraft is an originality-first drafting and editing assistant. It helps generate fresher writing, explain structure inline, and revise existing drafts, but it does not claim detector-backed plagiarism scores.
 
 ## Workflow Stages
 
 | Stage | Purpose |
 |---|---|
+| `forge` | [Interactive Onboarding] Collect course level, topic, rubrics, citation style, and initialize project memory |
 | `plan` | Build the thesis, section goals, examples to avoid, and source placeholders |
-| `outline` | Create the section structure and wait for approval in topic-only mode |
+| `outline` | Create the section structure and wait for approval in topic-only mode (Checkpoint Gate) |
 | `draft` | Write the first full draft from the approved plan |
 | `coding` | Produce coding solutions or implementation-heavy CS/data-science sections |
-| `rewrite` | Reduce formulaic phrasing, stock examples, and repeated structure |
-| `audit` | Report support gaps, placeholder citations, trust note, and delivery status |
+| `rewrite` | Apply originality edits, style randomization, and Humanise readability modes |
+| `audit` | Report web-searched citations, placeholders, trust note, and delivery status |
 
 ## Input Modes
 
@@ -22,17 +23,22 @@ TrueDraft is an originality-first drafting workflow. It helps generate fresher w
 | `open_generation` | Draft from a topic alone, with plan and outline approval gates |
 | `notes_first` | Expand user notes into a full draft while keeping their framing |
 | `draft_rewrite` | Improve an existing draft with targeted rewrites and a change summary |
+| `humanise` | Standalone pass to refine readability, rhythm, and tone |
 
 Automatic mode detection routes requests into prose-first, coding-first, or mixed mode depending on prompt signals.
 
-## Originality Controls
+## Style & Originality Controls
 
 | Control | Description |
 |---|---|
 | Analytical opening rule | Avoids dictionary-style intros and generic filler |
 | Stock-example avoidance | Replaces overused analogies with fresher examples |
 | Explain → example → implication | Keeps paragraphs reasoned instead of flat |
-| Change summary | Shows what the rewrite stage changed and why |
+| Style Randomization | Rotates 5 sentence types (Analytical, Causal, Comparative, Hypothetical, Observational) |
+| Perplexity & Burstiness | Varies sentence lengths (short/long mix) and injects low-frequency synonyms |
+| Humanise Readability | 3 levels of readability tuning (Light / Standard / Conversational) |
+| Change summary | Shows what the rewrite stage changed and why via a Before/After table |
+| Learning Mode | Inline explanations (`💡 Learning note:`) detailing writing techniques |
 | Trust note | Makes mode-specific confidence explicit instead of bluffing certainty |
 
 ## Coding and Data-Science Controls
@@ -45,13 +51,15 @@ Automatic mode detection routes requests into prose-first, coding-first, or mixe
 | Metrics and limitations discipline | Requires explicit metrics, implementation assumptions, and model/pipeline limits |
 | Integrity-safe claims | Never invents benchmark numbers, dataset facts, or references |
 
-## Citation Controls
+## Citation & Search-First Controls
 
 | Rule | Description |
 |---|---|
-| Placeholder-only when unsourced | Missing sources remain marked |
-| No invented references | Bibliographies are only built from user-supplied sources |
-| Delivery warning | Output is not labeled submission-ready if placeholders remain |
+| Search-First Citation Engine | Searches the web using host tools for actual papers/sources supporting claims |
+| Placeholder-only fallback | Missing or unverified sources remain marked with inline citation placeholders |
+| Zero citation fabrication | Never invents references, bibliography entries, authors, or journal names |
+| Validation Log | Logs all successfully retrieved web sources in `audit_log.md` with URLs for user verification |
+| Delivery warning | Output is not labeled submission-ready if placeholders or unverified citations remain |
 
 ## Project Memory
 
@@ -59,12 +67,11 @@ Automatic mode detection routes requests into prose-first, coding-first, or mixe
 |---|---|
 | `project-memory/brief.md` | Topic, rubric, scope, and notes |
 | `project-memory/style_profile.md` | Tone, citation style, and writing constraints |
-| `project-memory/audit_log.md` | Rewrite actions and unresolved issues |
+| `project-memory/audit_log.md` | Rewrite actions, web-searched citation URLs, and unresolved issues |
 
 ## Discipline Support
 
 TrueDraft keeps discipline-specific guidance for:
-
 - science
 - humanities
 - law
