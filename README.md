@@ -110,7 +110,7 @@ YourDraftProject/
 
 TrueDraft works seamlessly with other specialized skills to cover the entire lifecycle of research, drafting, and polishing:
 
-1. **Adversarial Research (Phase 0 — Research Dojo):** Use Research Dojo to stress-test your claims, map active academic debates, audit evidence, and build a high-density concept map.
+1. **Adversarial Research (Phase 0 — [Research Dojo](https://github.com/kshanxs/research-dojo)):** Use Research Dojo to stress-test your claims, map active academic debates, audit evidence, and build a high-density concept map.
 2. **Academic Drafting (Phase 1 — TrueDraft):** Feed the audited synthesis or final judgment notes from Research Dojo directly into TrueDraft's `notes_first` mode to generate a structured, polished, and citation-gated manuscript.
 3. **Stylistic Polishing & Proofreading (Phase 2 — Calligraph Sensei):** Install [Calligraph Sensei](https://github.com/kshanxs/calligraph-sensei) to apply advanced perplexity, sentence length variation (burstiness), and diagnostic writing audits under Academic-Formal mode, or run a conservative Proofreading pass to clean up spelling and syntax errors while leaving the academic tone and all citations completely intact.
 
