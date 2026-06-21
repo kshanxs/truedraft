@@ -49,7 +49,7 @@ Never load more than 3–4 files in a single pass unless the task clearly requir
 - **Five-Stage Workflow** — Plan → Outline → Draft → Rewrite (Originality + Humanise) → Audit.
 - **Search-First Citation Engine** — Searches web/scholarly sources using host tools to resolve factual claims; strictly defaults to placeholders if search fails or is unavailable.
 - **Originality & Readability Rewrite** — Integrates style randomization (perplexity/burstiness) and Humanise readability modes (Light/Standard/Conversational levels) to remove formulaic patterns.
-- **Learning Mode** — Inline `💡 Learning note:` annotations explaining style and structural choices as they are written.
+- **Learning Mode** — Inline `Learning note:` annotations explaining style and structural choices as they are written.
 - **CS/Data Science Stage** — Calibrated support for mixed-mode coding tasks, including modular structure, algorithm diversity, complexity analysis, and descriptive naming.
 - **Project memory** stored in `project-memory/` (style profile, brief, and audit log).
 
@@ -108,7 +108,8 @@ When the user starts a new assignment, topic, or asks to begin:
 1. Run the **Assignment Forge** (`pipeline/forge.md`). Collect topics, constraints, and rubrics interactively.
 2. Initialize `project-memory/brief.md` and `project-memory/style_profile.md`.
 3. Create `README.md` from templates.
-4. Prompt the user to proceed to the Plan & Outline stage.
+4. **Style Companion Check:** Check if `calligraph-sensei` is installed. If not, and the user emphasizes a desire for advanced writing polishing or avoiding AI detection patterns, recommend adding it: `npx skills add https://github.com/kshanxs/calligraph-sensei --skill calligraph-sensei`.
+5. Prompt the user to proceed to the Plan & Outline stage.
 
 ### 2. Open Generation
 
@@ -119,7 +120,9 @@ When the user provides only a topic or broad brief:
 4. **Outline Checkpoint Gate:** Stop and wait for user approval of the outline before long-form drafting.
 5. Load `pipeline/draft.md` to draft initial sections.
 6. If implementation-heavy, load `pipeline/coding.md`.
-7. Load `pipeline/rewrite.md` for originality and readability pass.
+7. **Readability & Originality Rewrite:**
+   - If `calligraph-sensei` is installed, delegate advanced style and flag-mitigation rewrite to it under **Academic-Formal** mode. For error-only checks, use its **Proofreading / Correction** mode to preserve academic tone.
+   - Otherwise, load local `pipeline/rewrite.md` for standard originality and readability pass.
 8. Load `pipeline/audit.md` to verify citation status and issue the final trust note.
 
 ### 3. Notes-First
@@ -130,14 +133,18 @@ When the user provides notes, bullets, or an outline:
 3. Load `pipeline/plan.md` to map claims and missing details.
 4. Load `pipeline/draft.md` to build directly on user notes (never throw away notes content).
 5. If notes include technical coding instructions, load `pipeline/coding.md`.
-6. Load `pipeline/rewrite.md` to smooth and randomize style.
+6. **Readability & Style Pass:**
+   - If `calligraph-sensei` is installed, invoke it under **Academic-Formal** mode to refine and randomize sentence structures, or **Proofreading / Correction** mode for error-only corrections.
+   - Otherwise, load local `pipeline/rewrite.md` to smooth and randomize style.
 7. Load `pipeline/audit.md` to check unresolved claims.
 
 ### 4. Draft Rewrite
 
 When the user pastes a draft and wants lower overlap or less formulaic writing:
 1. Read the entire draft first.
-2. Load `pipeline/rewrite.md` to apply targeted style randomization and Humanise readability modes.
+2. **Rewrite Execution:**
+   - If `calligraph-sensei` is installed, invoke it under **Academic-Formal** (or General) mode for refactoring, or **Proofreading / Correction** mode for error corrections.
+   - Otherwise, load local `pipeline/rewrite.md` to apply targeted style randomization and Humanise readability modes.
 3. Rewrite only flagged sections by default unless a full rewrite is requested.
 4. Load `pipeline/audit.md` to output the change summary tables.
 
@@ -153,7 +160,7 @@ When the request is coding-first or implementation-first:
 When the user says "explain as you go", "learning mode", "teach me", or "show me why":
 1. Load `references/learning_mode.md` and keep it active for the entire session.
 2. Perform drafting and rewriting normally.
-3. After each output block or stage, insert a `💡 Learning note:` explaining the choice of sentence length, vocabulary reduction, or rhetorical technique.
+3. After each output block or stage, insert a `Learning note:` explaining the choice of sentence length, vocabulary reduction, or rhetorical technique.
 
 ### 7. Citations & Search-First Policy
 

@@ -2,6 +2,10 @@
 
 All notable changes to the `truedraft` skill will be documented in this file.
 
+## v1.2.0 — 2026-06-22
+- **Calligraph Sensei Proofreader Synergy:** Expanded synergy boundaries to support Calligraph Sensei's new conservative **Proofreading / Correction** mode, allowing users to run spelling and syntax audits without affecting scholarly tone or citations.
+- **Emoji Cleanup:** Cleaned up documentation and skill markdown templates to maintain standard emoji-free instructions.
+
 ## v1.1.0 — 2026-06-21
 - **Synergistic Integration (Research Dojo):** Integrated modular cross-referencing capabilities with the companion `Research Dojo` skill.
   - Added the Research Dojo workflow integration documentation to `README.md`.

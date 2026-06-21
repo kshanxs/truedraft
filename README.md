@@ -10,7 +10,7 @@
 
 <br>
 
-[![Version](https://img.shields.io/badge/version-1.1.0-8957e5?style=for-the-badge&labelColor=161b22)](./docs/FEATURES.md)
+[![Version](https://img.shields.io/badge/version-1.2.0-8957e5?style=for-the-badge&labelColor=161b22)](./docs/FEATURES.md)
 [![Install](https://img.shields.io/badge/⚡_Install-npx_skills_add-0d1117?style=for-the-badge&labelColor=161b22)](https://github.com/kshanxs/truedraft)
 [![License](https://img.shields.io/badge/License-MIT-2ea043?style=for-the-badge&labelColor=161b22)](./LICENSE)
 [![Docs](https://img.shields.io/badge/Docs-USAGE.md-f78166?style=for-the-badge&labelColor=161b22)](./docs/USAGE.md)
@@ -106,12 +106,13 @@ YourDraftProject/
 
 ---
 
-## 🤝 Synergistic Companion: Research Dojo
+## 🤝 Synergistic Companions: Research Dojo & Calligraph Sensei
 
-TrueDraft works seamlessly with [Research Dojo](https://github.com/kshanxs/research-dojo) to cover the entire research-to-writing lifecycle:
+TrueDraft works seamlessly with other specialized skills to cover the entire lifecycle of research, drafting, and polishing:
 
 1. **Adversarial Research (Phase 0 — Research Dojo):** Use Research Dojo to stress-test your claims, map active academic debates, audit evidence, and build a high-density concept map.
 2. **Academic Drafting (Phase 1 — TrueDraft):** Feed the audited synthesis or final judgment notes from Research Dojo directly into TrueDraft's `notes_first` mode to generate a structured, polished, and citation-gated manuscript.
+3. **Stylistic Polishing & Proofreading (Phase 2 — Calligraph Sensei):** Install [Calligraph Sensei](https://github.com/kshanxs/calligraph-sensei) to apply advanced perplexity, sentence length variation (burstiness), and diagnostic writing audits under Academic-Formal mode, or run a conservative Proofreading pass to clean up spelling and syntax errors while leaving the academic tone and all citations completely intact.
 
 ---
 
