@@ -8,6 +8,15 @@ This stage is mandatory for `open_generation` and recommended for `notes_first`.
 
 ---
 
+## Synergistic Integration (Research Dojo)
+
+If the user has pre-run the `research-dojo` skill on the topic:
+1. Import the Dojo Research Brief (`dojo_brief.md` or synthesized notes) directly into the plan inputs.
+2. Map the Dojo's stress-tested thesis, debate conflicts, audited claims (facts vs. speculation), and identified stock analogies directly into the required plan outputs.
+3. Skip redundant topic exploration questions and proceed directly to outlining.
+
+---
+
 ## Inputs
 
 - topic or prompt

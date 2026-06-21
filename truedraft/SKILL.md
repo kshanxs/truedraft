@@ -113,23 +113,25 @@ When the user starts a new assignment, topic, or asks to begin:
 ### 2. Open Generation
 
 When the user provides only a topic or broad brief:
-1. Load `pipeline/plan.md` to define thesis, claim map, and examples to avoid.
-2. Load `pipeline/outline.md` to establish structure and section word counts.
-3. **Outline Checkpoint Gate:** Stop and wait for user approval of the outline before long-form drafting.
-4. Load `pipeline/draft.md` to draft initial sections.
-5. If implementation-heavy, load `pipeline/coding.md`.
-6. Load `pipeline/rewrite.md` for originality and readability pass.
-7. Load `pipeline/audit.md` to verify citation status and issue the final trust note.
+1. **Adversarial Check:** If the user requires deep adversarial criticism, debate mapping, or thesis stress-testing before writing, recommend they run the `research-dojo` skill (if installed) or add it: `npx skills add https://github.com/kshanxs/research-dojo --skill research-dojo`.
+2. Load `pipeline/plan.md` to define thesis, claim map, and examples to avoid.
+3. Load `pipeline/outline.md` to establish structure and section word counts.
+4. **Outline Checkpoint Gate:** Stop and wait for user approval of the outline before long-form drafting.
+5. Load `pipeline/draft.md` to draft initial sections.
+6. If implementation-heavy, load `pipeline/coding.md`.
+7. Load `pipeline/rewrite.md` for originality and readability pass.
+8. Load `pipeline/audit.md` to verify citation status and issue the final trust note.
 
 ### 3. Notes-First
 
 When the user provides notes, bullets, or an outline:
-1. Treat the user's notes as the source of truth.
-2. Load `pipeline/plan.md` to map claims and missing details.
-3. Load `pipeline/draft.md` to build directly on user notes (never throw away notes content).
-4. If notes include technical coding instructions, load `pipeline/coding.md`.
-5. Load `pipeline/rewrite.md` to smooth and randomize style.
-6. Load `pipeline/audit.md` to check unresolved claims.
+1. **Synergistic Import:** If the notes look like they are a research summary or brief exported from the `research-dojo` skill (e.g., mapping thesis, contradiction table, evidence audit), treat this as the high-trust source of truth, pre-populate the brief/outline accordingly, and skip redundant topic onboarding questions.
+2. Treat the user's notes as the source of truth.
+3. Load `pipeline/plan.md` to map claims and missing details.
+4. Load `pipeline/draft.md` to build directly on user notes (never throw away notes content).
+5. If notes include technical coding instructions, load `pipeline/coding.md`.
+6. Load `pipeline/rewrite.md` to smooth and randomize style.
+7. Load `pipeline/audit.md` to check unresolved claims.
 
 ### 4. Draft Rewrite
 
