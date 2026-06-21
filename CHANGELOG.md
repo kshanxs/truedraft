@@ -1,105 +1,35 @@
 # Changelog
 
-All notable changes to the assignment-writer skill are documented here.  
-Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+All notable changes to the `truedraft` skill will be documented in this file.
+
+## v1.0.0 — 2026-06-21
+- **TrueDraft Rebranding & Baselining:** Re-baselined the skill from `assignment-writer-skill` to `truedraft`. Reorganized the entire project structure and renamed paths to align with the core originality-first positioning.
+- **Interactive Onboarding (The Forge):** Standardized a 9-question setup mapping institutional guidelines, word budget, and rubrics directly to project context.
+- **Five-Stage Writing Pipeline:** Restructured the core flow into distinct stages: `plan`, `outline`, `draft`, `rewrite` (incorporating originality and readability passes), and `audit`.
+- **Search-First Citation Engine:** Strict policy to search real scholarly databases/web using host tools, and default entirely to placeholders on search failure to prevent hallucinated references.
+- **Originality & Readability Rewriter:** Implemented style-randomization (perplexity/burstiness tuning) and the `Humanise` readability passes (Light, Standard, Conversational) to remove robotic, predictable writing patterns.
+- **CS/Data Science Stage:** Calibrated programming and report workflow supporting modular design, computational complexity mapping, and algorithm variety.
 
 ---
 
-## [1.2.2] — 2026-03-14
+## Legacy Version History (as assignment-writer-skill)
 
-### Added
-- **Source Divergence Awareness** — proactively prevents canonical example overlap before writing begins:
-  - `pipeline/research.md` — new Task 6: Source Divergence Audit. Identifies the 2–3 most authoritative sources on the topic, blacklists their examples and framings, and requires alternative illustrations before passing notes to the Writer Agent
-  - `pipeline/research.md` — new **Source Divergence Blacklist** section in the output format, passed downstream to the Plagiarism Guard
-  - `pipeline/plagiarism_guard.md` — new **Stage 0: Canonical Example Scan** runs before any other scoring. Checks the research blacklist and a built-in table of 14 common topic/example pairs (bias-variance tradeoff, gradient descent, recursion, etc.) — any match is immediately flagged 🔴 HIGH and replaced with a domain-shifted alternative
+Before rebranding and baselining as `truedraft v1.0.0`, the following iterations were released under the name `assignment-writer-skill`:
 
-### Why
-Canonical example convergence is a class of similarity detection that bypasses n-gram checks entirely — two independently written texts can share zero copied sentences but still match on Turnitin/Grammarly because they use the same well-known pedagogical illustration (e.g. KNN k=1 for bias-variance tradeoff, spam filter for ML intro). This update eliminates that class of risk at the source.
+### v1.2.2 — 2026-03-14
+- **Source Divergence Awareness:** Added a Source Divergence Audit stage to research and identify authoritative sources on a topic, blacklist their examples and framings, and require alternative illustrations to prevent n-gram and structure overlap.
+- **Canonical Example Scan:** Integrated a pre-drafting scanner into the originality pass to identify and replace 14 common pedagogical illustrations (e.g., spam filters, bias-variance tradeoff graphs) with domain-shifted alternatives.
 
----
+### v1.2.1 — 2026-03-14
+- **Grammar & Punctuation Pass:** Added `references/grammar.md` containing 8 rule categories (including introductory clauses, em/en dash formatting, tense consistency, and Oxford commas) along with a grammar checklist inside the audit stage.
 
-## [1.2.1] — 2026-03-14
+### v1.2.0 — 2026-03-14
+- **Humanise Readability Mode:** Integrated a readability pass with three levels (Light, Standard, and Conversational) and two tone settings to produce human-sounding flow, outputting a detailed before/after sentence comparison table.
+- **Discipline-Specific Support (Data Science & Commerce):** Added custom writing structures and defaults for Data Science/CS (mandating Big-O analysis and dataset sizing methodology) and Commerce (utilizing theory-first evaluation structures and financial work ratios).
+- **Essay Improvement Pipeline:** Added a custom workflow to critique, humanise, style, and review pre-written drafts pasted by the user.
 
-### Added
-- **Grammar & Punctuation pass** — new `references/grammar.md` with 8 rule categories and active quick-check protocol:
-  - Subject-verb agreement
-  - Comma rules (introductory clauses, Oxford comma, compound sentences, which/that)
-  - Hyphenation of compound modifiers; em/en dash vs hyphen usage
-  - Apostrophes (`its` vs `it's`, possessive plurals)
-  - Parallelism in lists
-  - Comma splice and rogue fragment detection
-  - Academic-specific rules (tense consistency, "however" placement, number formatting)
-- **Grammar checklist section** added to `pipeline/review.md` — 9 active checks, inline fixes, reported in the pass/fail summary
+### v1.1.0 — 2026-03-13
+- **Context Footprint Optimization:** Split core documentation out of `SKILL.md` into `docs/FEATURES.md` and `docs/USAGE.md` to optimize agent context window usage during execution.
 
----
-
-## [1.2] — 2026-03-14
-
-### Added
-- **Humanise Mode** — new `references/humanise.md` and `pipeline/humanise.md`
-  - 10 core readability rules (filler removal, active voice, analogies, rhythm variation)
-  - Two tone modes: Academic-Conversational and Fully Conversational
-  - Three intensity levels: Light / Standard / Conversational
-  - Runs standalone on pasted text or as a pipeline stage (after Style, before Plagiarism Guard)
-  - Outputs a Before/After table of the most-changed sentences
-- **Data Science / CS discipline** — new `references/disciplines/data_science_cs.md`
-  - Code-prose hybrid rules, mandatory Big-O complexity analysis
-  - Dataset methodology requirements (source, size, splits, bias)
-  - ML hedging language guidelines
-  - Figure and visualisation description standards
-  - IEEE / ACM / APA 7 citation defaults
-- **Commerce discipline** — new `references/disciplines/commerce.md`
-  - Theory-first writing structure (identify concept → apply → evaluate)
-  - Explicit evaluation scaffolding ("however", "in the long run", "this assumes...")
-  - Economics frameworks: PED/YED/XED, market structures, externalities, fiscal/monetary policy
-  - Accounting ratio analysis with workings requirements
-  - Harvard citation defaults
-- **Workflow 7: Improve My Essay** — defined pipeline for students with finished work
-  - Critique → Humanise → Style → Guard → Review with a change summary at the end
-- **Two new examples**
-  - `examples/data_science_example.md` — overfitting in ML (code-prose, ML hedging, evidence-before-interpretation)
-  - `examples/commerce_example.md` — minimum wage economics essay (theory-first, evaluation scaffolding)
-
-### Changed
-- **Full pipeline extended** — Humanise stage inserted between Style and Plagiarism Guard
-- **Rewrite workflow updated** — Humanise now included after Style in the de-risk flow
-- **Command reference expanded** — new triggers: `"Humanise this"`, `"Make this more conversational"`, `"Improve my essay"`
-- **Discipline detection updated** in `references/assignment_forge.md` and `pipeline/writer.md` — Data Science/CS and Commerce now correctly routed; `science.md` and `business.md` trigger conditions clarified for MBA/corporate vs. school-level use
-- **Discipline-Specific Rules feature** description updated to include the two new disciplines
-- **README structure listing** updated to reflect new disciplines and examples
-
-### Fixed
-- **Broken file path** in `pipeline/style.md` — `frameworks/style_randomization.md` corrected to `references/style_randomization.md` (was silently skipping the style framework on every run)
-- **Duplicate Q5 label** in `references/assignment_forge.md` — rubric question renumbered; full sequence now correctly Q1–Q10
-- **Learning mode gap** — `references/learning_mode.md` now includes a Humanise stage note with before/after examples
-- **Missing discipline routes** — `pipeline/writer.md` discipline table was missing Data Science/CS and Commerce
-
----
-
-## [1.1] — 2026-03-13
-
-### Changed
-- Restructured skill directory for publication — separated `docs/` from core skill files
-- Trimmed `SKILL.md` to reduce context load; moved extended documentation to `docs/FEATURES.md` and `docs/USAGE.md`
-- Ensured all reference file links in `SKILL.md` resolve to correct relative paths
-
----
-
-## [1.0] — 2026-02-24
-
-### Initial release
-
-- **Assignment Forge** — 9-question onboarding (topic, level, word count, citation, institution, rubric, instructions, draft/notes, learning mode). All questions skippable. Resumes previous sessions.
-- **Assignment Memory Bank** — persists topic, style profile, and risk log across sessions in `assignment-memory/`
-- **6-Stage Pipeline** — Research → Write → Style → Code → Guard → Review, each stage independently loadable
-- **Analytical Intro Engine** — never generates definition-based openings
-- **Semantic Expansion** — explain → example → implication per concept
-- **Style Randomization** — 5 sentence types rotated per paragraph; perplexity/burstiness simulation
-- **N-gram Disruption** — actively breaks 4+ word sequences matching common academic phrasing
-- **Dual-Mode Plagiarism Guard** — internal mode (pipeline text) and rewrite mode (pasted text), with risk scores and change summary
-- **Rubric Awareness** — parses marking criteria, targets highest-weight dimensions
-- **Discipline support** — Science / Humanities / Law / Business
-- **Citation Engine** — APA 7, MLA 9, Harvard, IEEE
-- **Learning Mode** — explains every writing decision inline
-- **Code Originality Framework** — algorithm diversity, descriptive naming, modular structure, complexity analysis
-- **Self-Review Layer** — 8-stage verified checklist with inline fixes
+### v1.0.0 — 2026-02-24
+- **Initial Release:** Launched the initial version featuring the onboarding engine, 6-stage pipeline, analytical intro engine, style randomization, n-gram disruption, citation support, learning mode, and rubric-aware self-review checklists.

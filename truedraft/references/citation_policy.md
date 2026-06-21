@@ -31,7 +31,7 @@ When a source cannot be found or verified, insert one of:
 
 ## Formatting Rule
 
-When formatting real sources (either supplied by the user or found via web search), follow the requested style using [citation_guide.md](file:///Users/shubh/Developer/awf/assignment-writer-skill/truedraft/references/citation_guide.md):
+When formatting real sources (either supplied by the user or found via web search), follow the requested style using [citation_guide.md](./citation_guide.md):
 
 - APA 7th Edition
 - MLA 9th Edition

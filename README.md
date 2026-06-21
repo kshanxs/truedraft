@@ -1,69 +1,44 @@
-# TrueDraft
+<div align="center">
 
-*Originality-first drafting and revision with interactive onboarding, humanise readability tuning, and search-first citations.*
+<br>
 
-`TrueDraft` is a prompt-only skill for producing fresh drafts, refining existing writing, explaining structural choices inline, and resolving factual claims using web search without fabricating sources.
+# ✦ TrueDraft ✦
 
-It combines four core capabilities:
-- **Interactive Onboarding (The Forge):** A 9-question setup mapping institutional requirements, word count, and marking rubrics.
-- **5-Stage Writing Pipeline:** Plan → Outline Checkpoint Gate → Draft → Rewrite (Originality + Readability) → Audit.
-- **Search-First Citations:** Uses host search tools to locate real papers/books to support claims; strictly defaults to placeholders on search failure (never invents sources).
-- **Style & Readability Polish:** Integrates style randomization (perplexity/burstiness) and Humanise readability levels (Light/Standard/Conversational) to remove robotic, formulaic patterns.
+### *The Originality-First Academic Writing Assistant*
 
-It does not measure similarity against an external corpus, and it does not guarantee `0 plagiarism`.
+*Calibrated onboarding · Constraint-gated planning · Humanise readability · Search-first academic citations*
 
----
+<br>
 
-## What It Is
+[![Version](https://img.shields.io/badge/version-1.0.0-8957e5?style=for-the-badge&labelColor=161b22)](./docs/FEATURES.md)
+[![Install](https://img.shields.io/badge/⚡_Install-npx_skills_add-0d1117?style=for-the-badge&labelColor=161b22)](https://github.com/kshanxs/truedraft)
+[![License](https://img.shields.io/badge/License-MIT-2ea043?style=for-the-badge&labelColor=161b22)](./LICENSE)
+[![Docs](https://img.shields.io/badge/Docs-USAGE.md-f78166?style=for-the-badge&labelColor=161b22)](./docs/USAGE.md)
 
-TrueDraft is for:
-- Interactive, rubric-calibrated drafting.
-- Notes-first drafting that stays anchored to the user's ideas.
-- Draft rewrite when the user wants less overlap and less templated phrasing.
-- Standalone humanisation to improve reading flow and rhythm.
-- Coding-first and mixed-mode assignment workflows (report + implementation).
-- Learning-focused writing that explains stylistic and structural choices inline.
+<br>
 
-TrueDraft is not:
-- A plagiarism detector.
-- A citation generator that fabricates or hallucinates sources.
-- A guarantee that a submission will pass institutional checks.
+*Most AI assistants give you recycled templates and invented citations. TrueDraft gives you process discipline —*
+*mapping your arguments first, enforcing structure gates, polishing prose with style randomization, and never hallucinating sources.*
+
+</div>
 
 ---
 
-## Workflow
+## 🚀 Installation
 
-The core workflow is:
-1. **Assignment Forge** — 9-question interactive onboarding (skippable).
-2. **Plan** — Thesis formulation, claims mapping, and stock examples to avoid.
-3. **Outline Gate** — Structure and word budget, pausing for user approval before drafting.
-4. **Draft** — Full prose from the approved plan.
-5. **Coding** (conditional) — Modular, descriptive, algorithm-diverse implementations.
-6. **Rewrite** — Originality edit, style randomization, and Humanise readability pass.
-7. **Audit** — Checklist check, web-searched source summary, placeholders review, and trust note.
+```bash
+npx skills add https://github.com/kshanxs/truedraft --skill truedraft
+```
 
----
+### Update to latest version
 
-## Modes
-
-| Mode | Use case | Trust |
-|---|---|---|
-| `notes_first` | User provides notes or an outline | Highest |
-| `draft_rewrite` | User pastes an existing draft | Medium |
-| `open_generation` | User provides only a topic | Lowest |
+```bash
+npx skills update truedraft
+```
 
 ---
 
-## Citation Policy
-
-- **Search First:** If citations are needed, the agent attempts to search the web using host tools to find real papers/sources.
-- **Placeholder Fallback:** If search tools are unavailable or fail to find reliable academic matches, the agent inserts placeholders like `[CITE: source needed for claim about: "..."]`.
-- **Zero Fabrication:** Never invent authors, journal names, or references.
-- **Validation:** All searched citations are logged in the project's audit log for user verification.
-
----
-
-## Quick Start
+## 💬 Quick Start
 
 ```text
 "Start a new assignment on machine learning"
@@ -75,51 +50,85 @@ The core workflow is:
 "Explain as you go / Start learning mode"
 ```
 
-See [USAGE.md](file:///Users/shubh/Developer/awf/assignment-writer-skill/docs/USAGE.md) for examples and [FEATURES.md](file:///Users/shubh/Developer/awf/assignment-writer-skill/docs/FEATURES.md) for full capability details.
+The AI guides you through setup one question at a time. Every question is skippable.
+
+**→ [Full usage guide with examples](./docs/USAGE.md)**
 
 ---
 
-## Structure
+## ✨ Highlights
+
+| | |
+|---|---|
+| 🛠️ **The Assignment Forge** | 9-question interactive onboarding (rubrics, citation style, constraints) |
+| 🛡️ **Originality-First Rewrite** | Style randomization (perplexity/burstiness tuning) to break formulaic phrasing |
+| 🧬 **Source Divergence Scan** | Pre-drafting check blacklisting canonical examples and stock analogies |
+| 🔍 **Search-First Citation Engine** | Uses host search tools to locate real papers; strictly defaults to placeholders on search fail |
+| ✍️ **Humanise Readability passes** | Three levels (Light / Standard / Conversational) with before/after sentence audits |
+| 💡 **Inline Learning Mode** | Teaches academic structure as it writes using `💡 Learning note:` annotations |
+| 💻 **CS & Data Science Discipline** | Calibrated hybrid prose-code workflows with Big-O complexity checks and algorithm diversity |
+| 📁 **Project Memory Bank** | Auto-maintained profiles and audit logs in `project-memory/` |
+
+**→ [See all features and specifications](./docs/FEATURES.md)**
+
+---
+
+## ⚡ Command Reference
+
+| Say this | What happens |
+|---|---|
+| `"Start a new assignment"` | Launches the Assignment Forge onboarding |
+| `"Write my assignment on [topic]"` | Onboarding → Plan → Outline Gate → Draft → Rewrite → Audit |
+| `"Reduce similarity in this draft: [paste]"` | Executes the Originality pass and returns a comparison table |
+| `"Humanise this"` / `"Make this easier to read"` | Readability pass with standard intensity level |
+| `"Make this more conversational"` | Readability pass with high (Conversational) intensity level |
+| `"Solve this programming task"` | Launches CS/Data Science hybrid prose-code workflow |
+| `"Explain as you go"` / `"Learning mode"` | Activates inline teaching notes explaining structural and lexical choices |
+
+**→ [Full command reference](./docs/FEATURES.md#-command-reference)**
+
+---
+
+## 📁 Project Structure
+
+When active in a project directory, TrueDraft maintains the following structure:
 
 ```text
-assignment-writer-skill/
-├── README.md
-├── docs/
-│   ├── USAGE.md
-│   ├── FEATURES.md
-│   └── superpowers/specs/
-└── truedraft/
-    ├── SKILL.md
-    ├── pipeline/
-    │   ├── forge.md
-    │   ├── plan.md
-    │   ├── outline.md
-    │   ├── draft.md
-    │   ├── coding.md
-    │   ├── rewrite.md
-    │   └── audit.md
-    ├── references/
-    │   ├── academic_rules.md
-    │   ├── citation_policy.md
-    │   ├── citation_guide.md
-    │   ├── learning_mode.md
-    │   ├── style_randomization.md
-    │   ├── humanise.md
-    │   └── ...
-    ├── assets/templates/
-    └── examples/
+YourDraftProject/
+├── README.md               ← Auto-generated project overview
+├── working.md              ← Intermediate draft output
+├── final.md                ← Final audited, polished manuscript
+└── project-memory/         ← Auto-maintained by the AI assistant
+    ├── brief.md            ← Onboarding specifications & constraints
+    ├── style_profile.md    ← Citations, tone settings, and level profile
+    └── audit_log.md        ← History of rewritten sentences & verified citations
 ```
 
 ---
 
-## Installation
+## ⚠️ Limitations & Responsibility
 
-```bash
-cp -r truedraft /path/to/.agents/skills/truedraft
-```
+*   **No Plagiarism Measurement:** TrueDraft improves originality through structural and stylistic process discipline. It does **not** check external databases or guarantee a similarity score of `0%`.
+*   **Source Verification:** Always review citations listed in `audit_log.md` and resolve any outstanding `[CITE: ...]` placeholders before submitting your work.
+*   **Institutional Alignment:** Ensure that your use of TrueDraft aligns with the academic integrity policy of your specific institution.
 
 ---
 
-## Limitations & Responsibility
+## 📝 Changelog
 
-TrueDraft reduces similarity risk through process discipline and style tuning, not through corpus-backed verification. The user remains responsible for checking web-searched sources in `audit_log.md`, resolving remaining placeholders, and complying with their institution's academic integrity policies.
+See [CHANGELOG.md](./CHANGELOG.md) for details on all versions and releases.
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+Copyright © 2026 [Shubhanshu Shukla](https://github.com/kshanxs). All rights reserved.
+
+---
+
+<p align="center">
+  <sub>MIT License &nbsp;•&nbsp; Permission to Modify & Distribute &nbsp;•&nbsp; No Warranty or Liability</sub><br>
+  <sub>Designed for academic integrity and clarity of expression.</sub>
+</p>
